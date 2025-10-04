@@ -1,0 +1,43 @@
+Q1: What is deep learning?
+
+A: Deep learning is a part of machine learning where computers learn to recognize patterns and make decisions by using structures called neural networks. These networks are inspired by how the human brain works, with many layers that help the computer learn complex things from data.
+
+Q2: What is a neural network?
+
+A: A neural network is a collection of simple units called "neurons" that are connected together in layers. Each neuron takes in numbers, does a simple calculation, and passes the result to the next layer. The first layer takes the input (like an image), and the last layer gives the output (like a digit label).
+
+Q3: Why do we call it "deep" learning?
+
+A: The "deep" in deep learning means the network has many layers between the input and output. More layers help the network learn more complex patterns, like recognizing handwriting or faces.
+
+Q4: How does a neural network learn?
+
+A: The network learns by looking at lots of examples. It makes a guess, checks if it was right or wrong, and then adjusts its internal settings (called weights) to do better next time. This process is repeated many times until the network gets good at the task.
+
+Q5: What is the MNIST dataset?
+
+A: MNIST is a famous collection of 70,000 small images of handwritten digits (0-9). Each image is 28x28 pixels. It's often used to teach and test how well a neural network can recognize handwritten numbers.
+
+Q6: Why do we use MNIST for learning deep learning?
+
+A: MNIST is simple, small, and easy to understand. It helps beginners see how neural networks work without needing a lot of computer power. If your model can recognize MNIST digits, you’ve learned the basics of deep learning.
+
+Q7: What are the main steps to solve MNIST with deep learning?
+
+A: Load and look at the data (images and labels).
+Build a neural network model (start simple, like one hidden layer).
+Train the model using the images and correct answers.
+Test the model to see how well it recognizes new, unseen digits.
+Improve the model by adding more layers or using better techniques.
+
+Q8: What is an activation function?
+
+A: An activation function is a small math operation in each neuron that helps the network learn complex things. Common examples are ReLU and sigmoid. Without activation functions, the network would only be able to learn very simple patterns.
+
+Q9: What is a loss function?
+
+A: The loss function measures how far off the network’s guess is from the correct answer. The network tries to make this number as small as possible during training.
+
+Q10: What is backpropagation?
+
+A: Backpropagation is the process where the network figures out how to change its internal settings (weights) to get better at the task. It works by sending the error backward through the network and updating each layer to reduce mistakes.
