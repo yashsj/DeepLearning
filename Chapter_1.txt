@@ -41,3 +41,37 @@ A: The loss function measures how far off the network’s guess is from the corr
 Q10: What is backpropagation?
 
 A: Backpropagation is the process where the network figures out how to change its internal settings (weights) to get better at the task. It works by sending the error backward through the network and updating each layer to reduce mistakes.
+
+
+Q11: What is the purpose of image preprocessing in PyTorch?
+
+A: Image preprocessing ensures that input data is consistent, standardized, and optimized for model training. Common steps include resizing, normalization, augmentation, and conversion to tensors, which help neural networks learn more effectively and generalize better.
+
+Q12: How do you convert a PIL image or NumPy array to a PyTorch tensor?
+
+A: Use transforms.ToTensor() in a transformation pipeline. This converts the image to a tensor, moves the channel dimension to the front, and scales pixel values from [0][255] to [0.0, 1.0].
+
+Q13: Why do we use transforms.Compose([transforms.ToTensor()]) instead of just transforms.ToTensor()?
+
+A: transforms.Compose() allows chaining multiple preprocessing steps in a specific order. Even if you start with one transform, using a list makes it easy to add more steps later, such as normalization or augmentation.
+
+Q14: What is the shape of an MNIST image before and after conversion to a tensor?
+A: Before conversion, an MNIST image is a 2D array of shape [28][28] (grayscale). After ToTensor(), it becomes a tensor of shape [1][28][28], where 1 is the channel dimension required for deep learning models.
+
+Q15: Why do we need the channel dimension in image tensors?
+A: The channel dimension allows models to process images with multiple color channels (e.g., RGB) and supports batch processing. For grayscale images, the channel dimension is set to 1, but for RGB images, it would be 3.
+
+Q16: What are some common image preprocessing techniques in PyTorch?
+A: Techniques include resizing, cropping, flipping, rotating, color jittering, normalization, and converting to tensors. These steps help standardize input data and improve model robustness.
+
+Q17: How does normalization help in image preprocessing?
+A: Normalization rescales pixel values to have a specific mean and standard deviation, which stabilizes and speeds up neural network training by ensuring consistent input distributions.
+
+Q18: What is the role of data augmentation in training neural networks?
+A: Data augmentation artificially increases dataset size and diversity by applying random transformations (e.g., flips, rotations, color changes), helping models generalize better and reducing overfitting.
+
+Q19: How do you create a DataLoader for efficient training in PyTorch?
+A: Use torch.utils.data.DataLoader to batch, shuffle, and load data during training. This enables efficient memory usage and ensures the model sees diverse data in each epoch.
+
+Q20: Why is tensor-based processing important for deep learning?
+A: Tensors enable fast, parallel computations on CPUs and GPUs, support automatic differentiation, and are the standard data format for all major deep learning frameworks, making them essential for scalable model training
