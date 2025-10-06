@@ -75,3 +75,37 @@ A: Use torch.utils.data.DataLoader to batch, shuffle, and load data during train
 
 Q20: Why is tensor-based processing important for deep learning?
 A: Tensors enable fast, parallel computations on CPUs and GPUs, support automatic differentiation, and are the standard data format for all major deep learning frameworks, making them essential for scalable model training
+
+
+Q21: What is the purpose of assigning a transform to a dataset in PyTorch?
+A: Assigning a transform to a dataset ensures that every image retrieved from the dataset is automatically preprocessed (e.g., converted to a tensor, normalized, augmented) before being used for training or inference.
+
+Q22: How does a DataLoader help in training neural networks?
+A: A DataLoader efficiently loads data in batches, shuffles the data if needed, and can use multiple worker processes for faster data retrieval. This makes training more efficient and helps prevent memory issues by not loading the entire dataset at once.
+
+Q23: What is data augmentation and why is it important?
+A: Data augmentation is the process of creating new, slightly modified versions of existing data (e.g., by flipping, rotating, or cropping images) to increase dataset diversity. 
+This helps models generalize better and reduces overfitting, especially when the original dataset is small.
+
+Q24: Does data augmentation in PyTorch increase the dataset size?
+A: No, standard data augmentation in PyTorch applies random transformations on-the-fly each time an image is loaded, so the dataset size remains the same. Each epoch, the model may see different augmented versions of the same images, but the number of samples does not increase.
+
+Q25: What are some common data augmentation techniques in PyTorch?
+A: Common techniques include random horizontal/vertical flips, random rotations, random crops, color jittering, normalization, and resizing. These can be combined using transforms.Compose to create a robust preprocessing pipeline.
+
+Q26: What are advanced augmentation methods available in torchvision?
+A: Torchvision provides advanced methods like AutoAugment, RandAugment, AugMix, and TrivialAugment, which automatically apply a variety of augmentation policies to improve model performance and robustness.
+
+Q27: How do you apply different transforms for training and validation datasets?
+A: Define separate transform pipelines for training (with augmentation) and validation (with only basic preprocessing like resizing and normalization), then assign them to the respective datasets’ .transform attributes.
+
+Q28: Why is it important to avoid shuffling the validation set?
+A: Shuffling is not needed for validation because the model is not learning from this data; it is only being evaluated. Keeping the order consistent ensures reproducible and fair evaluation metrics.
+
+Q29: How does batch size affect model training?
+A: Batch size determines how many samples are processed before updating model weights. Smaller batches can help models generalize better and fit within memory constraints, while larger batches can speed up training but may require more memory.
+
+Q30: What is the benefit of using transforms.Compose in your data pipeline?
+A: transforms.Compose allows you to easily chain multiple preprocessing and augmentation steps, making your data pipeline modular, readable, and easy to modify as your project evolves
+
+
