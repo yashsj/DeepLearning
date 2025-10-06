@@ -108,4 +108,30 @@ A: Batch size determines how many samples are processed before updating model we
 Q30: What is the benefit of using transforms.Compose in your data pipeline?
 A: transforms.Compose allows you to easily chain multiple preprocessing and augmentation steps, making your data pipeline modular, readable, and easy to modify as your project evolves
 
+Q31: What is training data, and why do we need it?
+A: Training data is the portion of your dataset used to teach a machine learning model how to make predictions. The model sees both the input features and the correct outputs (labels), and it adjusts its internal parameters to minimize errors. This is like a student learning from flashcards with answers provided—the more diverse and high-quality the training data, the better the model can learn patterns and relationships.
+
+Q32: What is validation data, and what is its role?
+A: Validation data is a separate subset of data used during model development to check how well the model is generalizing to new, unseen examples. It acts as a checkpoint, helping you tune model settings (hyperparameters) and detect overfitting. The model never learns from validation data—it only gets evaluated on it, so you can see if it's truly learning or just memorizing the training set.
+
+Q33: What is test data, and when is it used?
+A: Test data is a final, untouched subset of data used only after the model is fully trained and tuned. It provides a realistic, unbiased check of how well the model will perform in the real world. The test set should never be used during training or validation, ensuring the evaluation is fair and not influenced by model development decisions.
+
+Q34: Why do we split data into training, validation, and test sets? (First principles)
+A: Splitting data prevents the model from just memorizing answers and helps us measure how well it can handle new, unseen data. Training data teaches the model, validation data helps us tune and check it during development, and test data gives a final, honest assessment. This approach ensures the model is useful beyond the examples it was trained on—just like a student who studies with one set of flashcards, is quizzed with another, and finally takes a real exam with new questions.
+
+Q35: What happens if we don't use validation or test data?
+A: If we only use training data, the model might "overfit"—memorizing answers instead of learning general rules. Without validation, we can't tune the model or spot overfitting. Without test data, we can't know if the model will work well on truly new data. This is like a student who only studies the same flashcards and never gets tested with new questions—they might seem prepared but fail in real situations.
+
+Q36: How are these splits typically made?
+A: A common approach is to use about 80% of the data for training, 10% for validation, and 10% for testing. The exact split can vary, but the key is to keep each set separate so the model is always challenged with new data at each stage.
+
+Q37: Can you give a simple analogy for these data splits?
+A: Imagine teaching a student:
+Training set: The student studies with a set of flashcards (sees both questions and answers).
+Validation set: The teacher quizzes the student with a different set of flashcards to check progress and adjust study methods.
+
+Test set: The student takes a final exam with new questions to see if they've truly learned the material.
+This process ensures the student isn't just memorizing but actually understands the concepts.
+
 
