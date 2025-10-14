@@ -208,4 +208,42 @@ Matrix: A table of dots
 Tensor: A cube or higher-dimensional grid of dots
 This analogy helps visualize how data grows in complexity as you add more dimensions.
 
+Q59: What is the core goal of the training loop in a neural network?
+A: The core goal is to help the network get better at making predictions by gradually adjusting its internal settings (weights and biases) so its outputs get closer to the correct answers for a set of examples.
+
+Q60: How does the training loop begin?
+A: It starts with random weights (guesses for the internal settings). The model has no knowledge—it's guessing blindly at first.
+
+Q61: Why do we use batches instead of all samples or one sample at a time in the training loop?
+A: Batches strike a balance between computational efficiency and learning quality. Using a batch (a small group of samples) helps smooth out noise in the updates and makes better use of computer hardware, leading to faster, more stable learning than single-sample or whole-dataset updates.
+
+Q62: What happens during the forward pass?
+A: In the forward pass, the model takes the current batch of inputs and runs them through all its layers to produce predictions. This is like having the student try to answer questions with their current knowledge.
+
+Q63: What is the loss function's job in the loop?
+A: The loss function measures how far off the model's predictions are from the correct answers for the batch. It's a single number that summarizes the model's error, guiding improvement.
+
+Q64: What happens in backpropagation (the backward pass)?
+A: Backpropagation figures out for each internal weight how changing it a little would affect the loss. It calculates the gradients (directions and amounts to adjust each weight) using calculus (the chain rule), working backwards from the output to the input layer.
+
+Q65: How does the optimizer use the information from backpropagation?
+A: The optimizer takes the gradients and makes small adjustments to each weight and bias in the direction that should reduce the loss. The hope is the next predictions will be closer to correct answers.
+
+Q66: What is an epoch, and why do we repeat the training loop many times?
+A: One epoch is a complete pass through all batches in the dataset. We repeat the process for several epochs so the model gets many chances to learn and correct its mistakes, refining its weights as it sees each example multiple times.
+
+Q67: What is the purpose of measuring validation or test loss during training?
+A: Measuring validation or test loss checks if the model is getting better at generalizing to new, unseen data—not just memorizing the training set. It is essential for spotting overfitting and knowing when to stop training.
+
+Q68: What is the difference between 'online', 'batch', and 'mini-batch' (stochastic) training?
+A:
+Online (stochastic) training: Update weights after each sample.
+Batch training: Calculate updates using all data at once, then update.
+Mini-batch (most common): Update after a small batch of samples. Mini-batch combines speed and stable learning.
+
+Q69: Why do we need to repeat the steps over and over?
+A: Because learning is gradual: the model can't become accurate in one step. Each loop is a learning opportunity; by repeating, the model can slowly approach optimal weights for the task.
+
+Q70: Can you give a first-principles analogy for the training loop?
+A: Imagine a student practicing math problems. They try (forward pass), check how wrong their answers were (loss), see how their mistakes relate to their approach (backpropagation), update their strategy (optimizer), and practice again (repeat). Over time, repeated practice and error-correction lead to mastery.
 
