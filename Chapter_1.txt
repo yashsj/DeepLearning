@@ -247,3 +247,32 @@ A: Because learning is gradual: the model can't become accurate in one step. Eac
 Q70: Can you give a first-principles analogy for the training loop?
 A: Imagine a student practicing math problems. They try (forward pass), check how wrong their answers were (loss), see how their mistakes relate to their approach (backpropagation), update their strategy (optimizer), and practice again (repeat). Over time, repeated practice and error-correction lead to mastery.
 
+
+
+Q71: What is gradient descent?
+
+A: Gradient descent is an algorithm that helps find the lowest value of a function — usually the loss in deep learning. It works by checking how steep the curve is (the gradient), then taking small steps downhill, making the function’s value smaller each time.
+
+Q72: How does gradient descent “know” which way to step?
+
+A: It uses the gradient (the derivative). The gradient tells which direction makes things decrease fastest. So we move a little bit in the opposite direction of the gradient, each time getting closer to the minimum.
+
+
+Q74: Why use a small step (learning rate)?
+
+A: Small steps prevent us from overshooting the minimum. If the steps are too big, we might bounce around and never settle at the bottom; too small, and training gets slow.
+
+Q75: How do you know when to stop stepping?
+
+A: When the gradient becomes very close to zero, meaning changes in the input barely affect output — that’s when we’re likely near the lowest point. We also might stop after a set number of steps or if improvements are tiny.
+
+Q76: Can you give a simple analogy?
+
+A: Imagine walking downhill in thick fog. You feel which way the ground slopes and always step in the direction that goes further down. Repeat until you’re at the lowest spot.
+
+Q77: Why is gradient descent important for deep learning?
+
+A: Neural networks have lots of weights. Directly calculating their optimal settings is impossible. Gradient descent gives us a way to “learn by doing” — gently adjusting all weights so the network gets better over time.
+
+
+
