@@ -1,0 +1,35 @@
+Pillar 1: Context Engineering
+Q: What is the most critical aspect when providing information to an AI agent, and why?
+
+A: The most critical aspect is context engineering (3:08). It's about providing the exact right amount of context—nothing more, nothing less. Overfeeding the model, even with large context windows, can degrade performance because models rely on statistical probabilities (3:30-4:03). "Garbage in, garbage out" (3:26).
+Q: How does effective context engineering influence the AI's output?
+
+A: By providing precise, fresh, and condensed context, the AI can produce dramatically better and more relevant outputs (3:15, 4:00-4:03). Tools like Claude Code (4:06) are essentially designed for efficient context engineering.
+Pillar 2: Agentic Validation
+Q: Once an AI agent generates output, how can we ensure its quality and correctness?
+
+A: By implementing agentic validation (7:01). This means giving the AI agent the ability to self-validate its own work (7:17). For backend tasks, this could involve integration or unit tests; for frontend, it might be navigating a browser and taking screenshots; and for mobile, simulating interactions via ADB (7:30-7:49).
+Q: Why is self-validation crucial for AI agents, and what kind of engineering is involved here?
+
+A: Self-validation is crucial because it significantly improves the agent's output from "crappy" to "actually works" (7:55-8:02). This pillar involves a lot of creative engineering (7:51, 8:07) to design robust validation loops, including thinking about observable logging (8:43-9:03) to provide agents with sufficient data to confirm correctness beyond just tests.
+Pillar 3: Agentic Tooling
+Q: What is "friction" in the context of agentic engineering, and how can it be addressed?
+
+A: "Friction" (9:38) refers to anything that blocks or slows down the AI agent in its workflow (10:54-10:59). It can be addressed by building agentic tooling (9:25), which are specific tools that the agent can use to overcome these obstacles.
+Q: Can you give examples of agentic tooling and explain its impact?
+
+A: Examples include agentic search (9:56) in tools like ChatGPT and Gemini for deep research, or CLI tools (10:25) that an agent can invoke to automate tasks it previously couldn't perform manually. The goal is to remove humans as the bottleneck (10:49), allowing agents to execute tasks more efficiently and successfully (10:33-10:37).
+Pillar 4: Agentic Codebases
+Q: How should a codebase be designed or modified to support AI agents effectively?
+
+A: Codebases need to be optimized for AI agents (11:33). This means actively cleaning up dead code, bad patterns, and competing frameworks (11:46-12:35) because "bad context goes into your agentic loop, it's basically like poisoning the agent" (12:13-12:18).
+Q: Beyond just clean code, what advanced considerations are there for agentic codebases?
+
+A: Advanced considerations include optimizing file structures for consistency, adding agent-specific logging, and creating documentation specifically for AI agents to track domain knowledge (12:43-13:01). The goal is to encode "golden principles" directly into the repository, making the codebase consistent and opinionated for future agents rather than just humans (13:03-13:14).
+Pillar 5: Compound Engineering
+Q: How do the previous four pillars of agentic engineering contribute to long-term growth and efficiency?
+
+A: When all four pillars—context engineering, agentic validation, agentic tooling, and agentic codebase optimizations—are implemented and shared across a team, they lead to compound engineering (13:52). This means that every optimization, new skill, or tool added to the codebase compounds over time (14:46-14:48), making the agents increasingly capable.
+Q: What is the ultimate outcome of practicing compound engineering in a team?
+
+A: The ultimate outcome is a self-reinforcing system where agents can increasingly self-validate and continue their work (15:30-15:32), essentially allowing the code to "build itself" over time (15:32-15:34). It fosters a shared, growing knowledge base and set of tools for AI agents, pushing engineering forward (15:15-15:28).
